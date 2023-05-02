@@ -15,5 +15,3 @@ class Momentum:
         for key in params.keys():
             self.v[key] = self.momentum * self.v[key] - self.lr * grads[key]
             params[key] += self.v[key]
-        
-        
