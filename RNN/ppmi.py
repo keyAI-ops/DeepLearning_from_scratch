@@ -20,7 +20,19 @@ def ppmi (C, verbose=False, eps=1e-8):  # C는 동시발생 행렬, verbose 진�
     
     return M
 # %%
+import sys
+sys.path.append('..')
 from common.util import preprocess, create_co_matrix, cos_similarity
 
-text
+text = "you say goodbye and I say hello"
+corpus, word_to_id, id_to_word = preprocess(text)
+vocab_size = len(word_to_id)
+C = create_co_matrix(corpus, vocab_size)
+W = ppmi(C)
+
+np.set_printoptions(precision=3)
+print(C)
+print('-'*50)
+print(W)
+
 # %%
